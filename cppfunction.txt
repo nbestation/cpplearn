@@ -28,6 +28,7 @@ mmap:
 				int fd,				//file descriptor
 				off_t offset);			//offset, 0 usually
 	returned value:
+		failed:		MAP_FAILED
 		successful:	ptr of the memory space
 
 munmap:
@@ -38,3 +39,13 @@ munmap:
 				size_t length);			//size of file(byte)
 	returned value:
 		failed:		MAP_FAILED
+		successful:	1
+
+ftruncate：
+	description:
+		change the size of a file
+	prototype:
+		int ftruncate(int fd,off_t length);
+	returned value:
+		failed:		-1
+		successful:	0
