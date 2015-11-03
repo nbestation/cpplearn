@@ -1,0 +1,20 @@
+stat:
+	description:
+		the struct containing the information of a file or a folder
+	prototype:
+		struct stat
+		{
+			mode_t		st_mode;		//mode
+			ino_t		st_ino;			//inode id
+			dev_t		st_dev;			//device id
+			dev_t		st_rdev;		//rdevice id
+			nlink_t		st_nlink;		//number of links
+			uid_t		st_uid;			//uid
+			gid_t		st_gid;			//gid
+			off_t		st_size;		//size(byte)
+			time_t		st_atime;		//last access time
+			time_t		st_mtime;		//last modified time 
+			time_t		st_ctime;		//create time
+			blksize_t	st_blksize;		//block size
+			blkcnt_t	st_blocks;		//number of blocks
+		}
