@@ -5,8 +5,8 @@ open:
 		int open(const char* pathname, int oflags);
 		int open(const char* pathname, int oflags, mode_t mode);
 	returned value:
-		failed: -1
-		successful: file descriptor
+		failed:		-1
+		successful:	file descriptor
 
 fstat:
 	description:
@@ -14,8 +14,8 @@ fstat:
 	prototype:
 		int fstat(int filedes, struct stat *buf);
 	returned value:
-		failed: -1
-		successful: 0
+		failed:		-1
+		successful:	0
 
 mmap:
 	description:
@@ -28,4 +28,13 @@ mmap:
 				int fd,				//file descriptor
 				off_t offset);			//offset, 0 usually
 	returned value:
-		ptr of the memory space
+		successful:	ptr of the memory space
+
+munmap:
+	description:
+		unmap a file in a part of (virtual) memory space
+	prototype:
+		void* mmap(	void* start,			//nullptr usually, OS allocating automaticly
+				size_t length);			//size of file(byte)
+	returned value:
+		failed:		MAP_FAILED
