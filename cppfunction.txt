@@ -1,0 +1,10 @@
+open:
+	description:
+		linux system call, create/open a file
+	prototype:
+		int open(const char* pathname, int oflags);
+		int open(const char* pathname, int oflags, mode_t mode);
+	returned value:
+		failed: -1
+		successful: file descriptor
+	
