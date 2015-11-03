@@ -7,4 +7,25 @@ open:
 	returned value:
 		failed: -1
 		successful: file descriptor
-	
+
+fstat:
+	description:
+		get the information of a file based on its file descriptor
+	prototype:
+		int fstat(int filedes, struct stat *buf);
+	returned value:
+		failed: -1
+		successful: 0
+
+mmap:
+	description:
+		map a file to a part of (virtual) memory space
+	prototype:
+		void* mmap(	void* start,			//nullptr usually, OS allocating automaticly
+				size_t length,			//size of file(byte)
+				int prot,			//protection type, PPROT_EXEC, PROT_READ, PROT_WRITE, PROT_NONE
+				int flags,			//MAP_SHARED, MAP_PRIVATE
+				int fd,				//file descriptor
+				off_t offset);			//offset, 0 usually
+	returned value:
+		ptr of the memory space
