@@ -1,4 +1,4 @@
-open:
+﻿open:
 	description:
 		linux system call, create/open a file
 	prototype:
@@ -49,3 +49,15 @@ ftruncate：
 	returned value:
 		failed:		-1
 		successful:	0
+
+fallocate:
+	description:
+		allocate the physical space for a file
+	prototype:
+		int fallocate(	int fd, 		
+				int mode, 			//
+				off_t offset, 
+				off_t len);
+	returned value:
+		failed:		-1
+		successful:	0	
